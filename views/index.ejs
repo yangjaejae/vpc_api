@@ -1,0 +1,40 @@
+<!-- views/board.ejs -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div class="" style="margin: auto">
+    <form action="/board/add" method="POST">
+      <table>
+        <tr>
+          <textarea name="name" id="name" ></textarea>
+        </tr>
+        <tr>
+          <textarea name="email" id="email" ></textarea>
+        </tr>
+        <tr>
+          <input type="submit">
+        </tr>
+      </table>
+    </form>
+    <table border="1">
+      <th>이름</th>
+      <th>이메일</th>
+      <th>날짜</th>
+      <% for (var i=0; i<board.length; i++) { %>
+      <tr>
+        <td><%= board[i].name %></td>
+        <td><%= board[i].email %></td>
+        <td>2020-04-0-27</td>
+      </tr>
+      <% } %>
+    </table>
+  </div>
+</body>
+
+</html>
