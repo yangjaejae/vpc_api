@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let mysql = require('mysql');
+require('dotenv').config()
 
 let dbconfig = {
     host: process.env.DB,
@@ -14,10 +15,16 @@ let dbconfig = {
 let connection = mysql.createConnection(dbconfig);
 
 // Home
-router.get('/', function(req, res){
 
+router.get('/health', function(req, res){
+  console.log('health');
+})
+
+router.get('/', function(req, res){
+    console.log("api")
     let query = 'select * from board';
     connection.query(query, (err, rows) => {
+        console.log(rows);
         res.send(rows);
     })
 
@@ -33,6 +40,7 @@ router.post('/add', function(req, res){
     )`;
     console.log(query);
     connection.query(query, (err, rows) => {
+        console.log(rows);
         res.send(rows);
     })
 });
