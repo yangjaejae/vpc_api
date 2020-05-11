@@ -10,7 +10,7 @@ docker rm -f $(docker ps -aqf name="${DOCKER_CONTAINER_NAME}")
 docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} .
 docker run -d \
            -p "4000:4000" \
-           --name="${DOCKER_IMAGE_NAME}" \
+           --name="${DOCKER_CONTAINER_NAME}" \
            -v ~/vpc_web/:/usr/src/app \
            -w "/usr/src/app" \
            --restart=on-failure \
