@@ -1,0 +1,31 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/vpc_api
+hooks:
+  BeforeBlockTraffic:
+  BlockTraffic:
+  ApplicationStop:
+  DownloadBundle:
+  BeforeInstall:
+  Install:
+  AfterInstall:
+    - location: ./ready.sh
+      timeout: 30
+  ApplicationStart:
+    - location: ./start.sh
+      timeout: 30
+  ValidateService:
+  BeforeAllowTraffic:
+  AllowTraffic:
+  AfterAllowTraffic:
+
+## application stop 
+## - docker stop & docker rm
+## before install
+## - docker rmi 
+## after install
+## - docker build
+## application start
+## - docker start
