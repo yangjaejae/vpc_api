@@ -1,8 +1,8 @@
 #!/bin/bash
-DOCKER_CONTAINER_NAME="web"
-DOCKER_IMAGE_NAME="web/nodejs"
+DOCKER_CONTAINER_NAME="was"
+DOCKER_IMAGE_NAME="was/nodejs"
 DOCKER_IMAGE_TAG="v1.0.0"
-echo "start WEB Server"
+echo "start WAS Server"
 
 cd /home/ec2-user/vpc_api
 
