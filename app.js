@@ -13,7 +13,9 @@ app.use(bodyparser.urlencoded({extended:false}));
 
 // routes
 const boardRouter = require('./routes/board');
+const healthRouter = require('./routes/health');
 app.use('/board', boardRouter);
+app.use('/health', healthRouter);
 
 const port = 8080;
 app.listen(port, () => console.log(`start with port: ${port}`));

@@ -15,13 +15,8 @@ let dbconfig = {
 let connection = mysql.createConnection(dbconfig);
 
 // Home
-
-router.get('/health', function(req, res){
-  console.log('health');
-})
-
 router.get('/', function(req, res){
-    console.log("api")
+    console.log("api");
     let query = 'select * from board';
     connection.query(query, (err, rows) => {
         console.log(rows);
@@ -31,6 +26,7 @@ router.get('/', function(req, res){
 });
 
 router.post('/add', function(req, res){
+    console.log("api");
     let query = `
             INSERT INTO board(\`name\`, email, reg_date) 
             VALUES(
