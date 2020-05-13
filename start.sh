@@ -6,7 +6,7 @@ echo "start WAS Server"
 
 echo "Start container#############################################"
 docker run -d \
-           -p "4000:4000" \
+           -p "8080:8080" \
            --name="${DOCKER_CONTAINER_NAME}" \
            -v /home/ec2-user/vpc_api/:/usr/src/app \
            -w "/usr/src/app" \
