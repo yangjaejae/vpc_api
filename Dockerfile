@@ -10,4 +10,5 @@ CMD chmod 777 ./*
 
 # 앱 의존성 설치
 COPY ./package*.json ./
+CMD pwd
 RUN npm install
