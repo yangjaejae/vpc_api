@@ -4,7 +4,7 @@ DOCKER_IMAGE_NAME="web/nodejs"
 DOCKER_IMAGE_TAG="v1.0.0"
 echo "start WEB Server"
 
-cd /home/ec2-user/vpc_web
+cd /home/ec2-user/vpc_api
 
 echo "Ready for start server #############################################"
 docker stop $(docker ps -qa) && docker rm $(docker ps -qa)
